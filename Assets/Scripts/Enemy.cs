@@ -14,29 +14,45 @@ public class Enemy : MonoBehaviour
     void Start()
     {
         coll = this.GetComponent<Collider2D>();
-        Debug.Log(coll.gameObject.name);
+        SetSpeed();
+        StartCoroutine(Destroy());
     }
 
     // Update is called once per frame
     void Update()
     {
-        
+        Move();
     }
 
-    //오브젝트 풀링 사용
-    public void Create(){
-
+    public void Move(){
+        if(moveDir == 0)
+            this.transform.Translate(Vector2.left * speed * Time.deltaTime);
+        else 
+            this.transform.Translate(Vector2.right * speed * Time.deltaTime);
     }
 
-    public void Destroy(){
-
+    IEnumerator Destroy(){
+        while(true){
+            yield return new WaitForSeconds(1);
+            if(Mathf.Abs(this.transform.position.x) > 11.0f){
+                Destroy(this.gameObject);
+                yield break;
+            }
+        }
     }
 
-    public void SetCollider(bool isVisible){
-
+    IEnumerator DisableCollider(float time){
+        coll.enabled = false;
+        yield return new WaitForSeconds(time);
+        coll.enabled = true;
     }
 
-    public void SetDamage(){
+    public void SetSpeed(){
+        float _speed = Random.Range(0.0f, 5.0f);
+        speed = _speed;
+    }
 
+    public void SetMoveDir(int dir){
+        moveDir = dir;
     }
 }

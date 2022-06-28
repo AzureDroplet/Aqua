@@ -29,8 +29,8 @@ public class GameManager : MonoBehaviour
     GameState _curGameState = GameState.Ready;
     UIManager _uiManager;
 
-    Start(){
-        _uiManager = UIManager.Instance;
+    void Start(){
+        _uiManager = UIManager.Instance; 
     }
     void SetGameState(GameState gameState){
         _curGameState = gameState;
@@ -43,7 +43,7 @@ public class GameManager : MonoBehaviour
 
             case GameState.Start:
                 Debug.Log("게임 시작");
-                _uiManager.SetStartUI(); break;
+                _uiManager.SetPlayUI(); break;
 
             case GameState.Over:
                 Debug.Log("게임 오버");

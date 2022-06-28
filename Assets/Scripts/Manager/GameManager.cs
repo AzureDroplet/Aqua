@@ -11,7 +11,7 @@ public class GameManager : MonoBehaviour
     }
     public GameState curGameState = GameState.Ready;
     UIManager _uiManager;
-    
+
     public static GameManager instance = null;
     private void Awake()
     {
@@ -31,7 +31,7 @@ public class GameManager : MonoBehaviour
     void Start(){
         _uiManager = UIManager.Instance; 
     }
-    void SetGameState(GameState gameState){
+    public void SetGameState(GameState gameState){
         curGameState = gameState;
 
         switch (curGameState)
@@ -50,7 +50,7 @@ public class GameManager : MonoBehaviour
         }
     }
 
-    GameState GetGameState(){
+    public GameState GetGameState(){
         return curGameState;
     }
 }

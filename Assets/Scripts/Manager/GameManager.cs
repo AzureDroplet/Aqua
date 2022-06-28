@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class GameManager : MonoBehaviour
 {
-    enum GameState{
+    public enum GameState{
         Ready,
         Play,
         End

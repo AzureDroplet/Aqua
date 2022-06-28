@@ -9,9 +9,10 @@ public class GameManager : MonoBehaviour
         Play,
         End
     }
-
+    public GameState curGameState = GameState.Ready;
+    UIManager _uiManager;
+    
     public static GameManager instance = null;
-
     private void Awake()
     {
         if (instance == null) 
@@ -26,16 +27,14 @@ public class GameManager : MonoBehaviour
         }
 
     }
-    GameState _curGameState = GameState.Ready;
-    UIManager _uiManager;
 
     void Start(){
         _uiManager = UIManager.Instance; 
     }
     void SetGameState(GameState gameState){
-        _curGameState = gameState;
+        curGameState = gameState;
 
-        switch (_curGameState)
+        switch (curGameState)
         {
             case GameState.Ready:
                 Debug.Log("게임 준비");
@@ -52,6 +51,6 @@ public class GameManager : MonoBehaviour
     }
 
     GameState GetGameState(){
-        return _curGameState;
+        return curGameState;
     }
 }

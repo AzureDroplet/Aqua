@@ -6,8 +6,8 @@ public class GameManager : MonoBehaviour
 {
     enum GameState{
         Ready,
-        Start,
-        Over
+        Play,
+        End
     }
 
     public static GameManager instance = null;
@@ -41,11 +41,11 @@ public class GameManager : MonoBehaviour
                 Debug.Log("게임 준비");
                 _uiManager.SetReadyUI(); break;
 
-            case GameState.Start:
+            case GameState.Play:
                 Debug.Log("게임 시작");
                 _uiManager.SetPlayUI(); break;
 
-            case GameState.Over:
+            case GameState.End:
                 Debug.Log("게임 오버");
                 _uiManager.SetEndUI(); break;
         }

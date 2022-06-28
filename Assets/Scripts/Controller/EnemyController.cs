@@ -5,8 +5,9 @@ using UnityEngine;
 public class EnemyController : MonoBehaviour
 {
     
+    public GameObject[] Enemys;
+    
     public static EnemyController instance = null;
-
     private void Awake()
     {
         if (instance == null) //instance가 null. 즉, 시스템상에 존재하고 있지 않을때
@@ -21,8 +22,6 @@ public class EnemyController : MonoBehaviour
         }
 
     }
-
-    public GameObject[] Enemys;
 
     // Start is called before the first frame update
     void Start()

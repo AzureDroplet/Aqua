@@ -8,6 +8,7 @@ public class UIManager : MonoBehaviour
     public Slider hpBar;
     public Gradient gradient;
     public Image fill;
+    public Text textScore;
 
     public Button button_Start;
     public Button button_Restart;
@@ -19,6 +20,10 @@ public class UIManager : MonoBehaviour
     private void Awake()
     {
         Instance = this;
+    }
+
+    public void SetScore(int score) {
+        textScore.text = "Score : " + score.ToString();
     }
 
     public void SetMaxHP(int hp) {

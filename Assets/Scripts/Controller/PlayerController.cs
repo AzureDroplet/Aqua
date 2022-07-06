@@ -28,7 +28,7 @@ public class PlayerController : MonoBehaviour
         currentHP = maxHP;
         uiManager.SetMaxHP(maxHP);
 
-        StartCoroutine("SetBasicScore");
+        StartCoroutine("PositionScore");
     }
 
     //Input
@@ -99,7 +99,7 @@ public class PlayerController : MonoBehaviour
 
     void ScoreDown(int value){
         score -= value;
-        uiManager.SetHP(score);
+        uiManager.SetScore(score);
     }
 
     void HpUp(int value){
@@ -111,7 +111,7 @@ public class PlayerController : MonoBehaviour
         while(true){
             yield return null;
             int pos = Mathf.RoundToInt(this.transform.position.y);
-            if(pos == _maxPos) break;
+            if(pos == _maxPos) continue;
             _maxPos = (_maxPos < pos) ? pos : _maxPos;
             if(_maxPos % 10 == 0){
                 ScoreUp(20);

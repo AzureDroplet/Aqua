@@ -34,7 +34,7 @@ public class Enemy : MonoBehaviour
     IEnumerator Destroy(){
         while(true){
             yield return new WaitForSeconds(1);
-            if(Mathf.Abs(this.transform.position.x) > 11.0f){
+            if(Mathf.Abs(this.transform.position.x) > 6.0f){
                 Destroy(this.gameObject);
                 yield break;
             }

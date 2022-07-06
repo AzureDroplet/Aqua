@@ -44,8 +44,13 @@ public class PlayerController : MonoBehaviour
         rb.MovePosition(rb.position + movement * moveSpeed * Time.deltaTime);
     }
 
-    private void OnTriggerEnter2D(Collider2D other) {
-        Damage(10);
+    private void OnTriggerEnter2D(Collider2D collider) {
+        if(collider.tag == "Enemy") {
+            Damage(10);
+        }
+        else if(collider.tag == "Item") {
+
+        }
     }
 
     void Damage(int damage) {

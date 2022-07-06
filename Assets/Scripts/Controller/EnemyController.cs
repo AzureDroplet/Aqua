@@ -19,11 +19,11 @@ public class EnemyController : MonoBehaviour
             yield return new WaitForSeconds(1.0f);
             int r = Random.Range(0,2);
             if(r == 0){
-                GameObject e = Instantiate(Enemys[Random.Range(0,Enemys.Length)], new Vector2(-10, GetCreatePosY()), Quaternion.identity) as GameObject;
+                GameObject e = Instantiate(Enemys[Random.Range(0,Enemys.Length)], new Vector2(-5, GetCreatePosY()), Quaternion.identity) as GameObject;
                 e.GetComponent<Enemy>().SetMoveDir(1);
             }
             else{
-                GameObject e = Instantiate(Enemys[Random.Range(0,Enemys.Length)], new Vector2(10, GetCreatePosY()), Quaternion.identity) as GameObject;
+                GameObject e = Instantiate(Enemys[Random.Range(0,Enemys.Length)], new Vector2(5, GetCreatePosY()), Quaternion.identity) as GameObject;
                 e.GetComponent<Enemy>().SetMoveDir(0);
             }
         }
@@ -31,8 +31,8 @@ public class EnemyController : MonoBehaviour
 
     public float GetCreatePosY()
     {
-        if (!GameObject.Find("Player")) return Random.Range(-5.0f, 5.0f);
-        float r = Random.Range(-5.0f, 5.0f);
+        if (!GameObject.Find("Player")) return Random.Range(-5.0f, 10.0f);
+        float r = Random.Range(-5.0f, 10.0f);
         float PlayerY; PlayerY = GameObject.Find("Player").transform.position.y;
         return PlayerY + r;
     }

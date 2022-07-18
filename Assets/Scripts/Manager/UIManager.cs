@@ -6,9 +6,11 @@ using UnityEngine.UI;
 public class UIManager : MonoBehaviour
 {
     public Slider hpBar;
-    public Gradient gradient;
+    public Gradient hpGradient;
     public Image fill;
     public Text textScore;
+
+    public Gradient bgGradient;
 
     public Button button_Start;
     public Button button_Restart;
@@ -30,12 +32,12 @@ public class UIManager : MonoBehaviour
         hpBar.maxValue = hp;
         hpBar.value = hp;
         // slider 1값일 때의 gradient 색으로 설정
-        fill.color = gradient.Evaluate(1f);
+        fill.color = hpGradient.Evaluate(1f);
     }
 
     public void SetHP(int hp) {
         hpBar.value = hp;
-        fill.color = gradient.Evaluate(hpBar.normalizedValue);
+        fill.color = hpGradient.Evaluate(hpBar.normalizedValue);
     }
     public void SetReadyUI() {
         GameUI[(int)GameManager.GameState.Ready].SetActive(true);

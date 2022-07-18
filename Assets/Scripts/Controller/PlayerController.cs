@@ -57,10 +57,12 @@ public class PlayerController : MonoBehaviour
             int value = collider.gameObject.transform.GetComponent<Item>().value;
             if(itemName.Contains("trash"))
                 ScoreDown(value);
-            else if(itemName.Contains("coin"))
+            else if(itemName.Contains("coin")) {
                 ScoreUp(value);
+            }
             else if(itemName.Contains("heart"))
                 HpUp(value);
+            Destroy(collider.gameObject);
         }
     }
 

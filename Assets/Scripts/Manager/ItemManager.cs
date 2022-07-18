@@ -19,7 +19,9 @@ public class ItemManager : MonoBehaviour
     IEnumerator CreateItem(){
         while(true){
             yield return new WaitForEndOfFrame();
-            if(buildY > 10) continue; //플레이어랑 너무 멀리 떨어져있으면 넘김
+            if(!GameObject.Find("Player")) continue;
+            float PlayerY =  GameObject.Find("Player").transform.position.y;
+            if(buildY - PlayerY > 20) continue; //플레이어랑 너무 멀리 떨어져있으면 넘김
 
             int r = Random.Range(0,100);
             if(r < 20) {

@@ -103,6 +103,7 @@ MonoBehaviour:
   moveSpeed: 2
   isUnBeatTime: 0
   unBeatTime: 2
+  score: 0
   rb: {fileID: 2865829590413057630}
   joystick: {fileID: 0}
   uiManager: {fileID: 0}

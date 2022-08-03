@@ -13,7 +13,7 @@ public class ServerInitialize : MonoBehaviour
         {
             // 초기화 성공 시 로직
             Debug.Log("초기화 성공!");
-            CustomSignUp();
+            // CustomSignUp();
         }
         else
         {

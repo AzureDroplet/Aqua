@@ -52,7 +52,7 @@ public class ServerOutput : MonoBehaviour
     public void GetRank()
     {
         List<RankItem> rankItemList = new List<RankItem>();
-        BackendReturnObject bro = Backend.URank.User.GetRankList("ee436dc0-4575-11ed-ba7e-8b00db4ba65a", 10);
+        BackendReturnObject bro = Backend.URank.User.GetRankList("e5df12e0-4577-11ed-a6f5-9118577b4fb9", 10);
         if (bro.IsSuccess())
         {
             JsonData rankListJson = bro.GetFlattenJSON();
@@ -64,7 +64,7 @@ public class ServerOutput : MonoBehaviour
                 RankItem rankItem = new RankItem();
 
                 rankItem.gamerInDate = rankListJson["rows"][i]["gamerInDate"].ToString();
-                rankItem.nickname = rankListJson["rows"][i]["nickname"].ToString();
+                rankItem.nickname = rankListJson["rows"][i]["name"].ToString();
                 rankItem.score = rankListJson["rows"][i]["score"].ToString();
                 //rankItem.index = rankListJson["rows"][i]["index"].ToString();
                 rankItem.rank = rankListJson["rows"][i]["rank"].ToString();
@@ -116,7 +116,7 @@ public class RankItem
 
     public override string ToString()
     {
-        string str = $"À¯ÀúÀÎµ¥ÀÌÆ®:{gamerInDate}\n´Ð³×ÀÓ:{nickname}\nÁ¡¼ö:{score}\nÁ¤·Ä:{index}\n¼øÀ§:{rank}\nÃÑÇÕ:{totalCount}\n";
+        string str = $"ï¿½ï¿½ï¿½ï¿½ï¿½Îµï¿½ï¿½ï¿½Æ®:{gamerInDate}\nï¿½Ð³ï¿½ï¿½ï¿½:{nickname}\nï¿½ï¿½ï¿½ï¿½:{score}\nï¿½ï¿½ï¿½ï¿½:{index}\nï¿½ï¿½ï¿½ï¿½:{rank}\nï¿½ï¿½ï¿½ï¿½:{totalCount}\n";
         if (extraName != string.Empty)
         {
             str += $"{extraName}:{extraData}\n";

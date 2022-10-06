@@ -5,6 +5,21 @@ using BackEnd;
 
 public class ServerInput : MonoBehaviour
 {
+    public static ServerInput instance = null;
+    private void Awake()
+    {
+        if (instance == null) 
+        {
+            instance = this; 
+            DontDestroyOnLoad(gameObject); 
+        }
+        else
+        {
+            if (instance != this)
+                Destroy(this.gameObject); 
+        }
+
+    }
     public void InsertTest()
     {
         string _name = "aqua";

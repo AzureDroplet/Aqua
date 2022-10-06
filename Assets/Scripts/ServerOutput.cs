@@ -6,16 +6,20 @@ using LitJson;
 
 public class ServerOutput : MonoBehaviour
 {
-    // Start is called before the first frame update
-    void Start()
+    public static ServerOutput instance = null;
+    private void Awake()
     {
-        Backend.GameData.GetTableList();
-    }
+        if (instance == null) 
+        {
+            instance = this; 
+            DontDestroyOnLoad(gameObject); 
+        }
+        else
+        {
+            if (instance != this)
+                Destroy(this.gameObject); 
+        }
 
-    // Update is called once per frame
-    void Update()
-    {
-        
     }
     
     public void GetTableList()

@@ -35,11 +35,12 @@ public class ServerInput : MonoBehaviour
     
     public void AddRank(string name, int score)
     {
+        Debug.Log("addrank 실행성공");
         string _name = name;
         int _score = score;
         
         Param param = new Param();
-        param.Add("name", _name);
+        param.Add("nickname", _name);
         param.Add("score", _score);
 
         var bro = Backend.GameData.Insert("Score", param);

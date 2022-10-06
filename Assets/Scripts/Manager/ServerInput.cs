@@ -42,8 +42,9 @@ public class ServerInput : MonoBehaviour
         param.Add("name", _name);
         param.Add("score", _score);
 
-        Backend.GameData.Insert("Score", param);
-        Backend.URank.User.UpdateUserScore("bf2eb580-456b-11ed-a6f5-9118577b4fb9", "Score", _name, param);
+        var bro = Backend.GameData.Insert("Score", param);
+        string inDate = bro.GetInDate();
+        Backend.URank.User.UpdateUserScore("bf2eb580-456b-11ed-a6f5-9118577b4fb9", "Score", inDate, param);
 
     }
 

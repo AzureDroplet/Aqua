@@ -68,6 +68,9 @@ public class PlayerController : MonoBehaviour
 
     void Damage(int damage) {
         currentHP -= damage;
+        if(currentHP <= 0) {
+            GameManager.instance.SetGameState("End");
+        }
         uiManager.SetHP(currentHP);
         isUnBeatTime = true;
         boxCollider2D.enabled = false;

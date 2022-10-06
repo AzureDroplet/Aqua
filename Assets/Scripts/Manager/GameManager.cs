@@ -48,7 +48,9 @@ public class GameManager : MonoBehaviour
             case "End":
                 Debug.Log("게임 오버");
                 curGameState = GameState.Play;
-                _uiManager.SetEndUI(); break;
+                _uiManager.SetEndUI();
+                ServerOutput.instance.GetTableList();
+                break;
         }
     }
     

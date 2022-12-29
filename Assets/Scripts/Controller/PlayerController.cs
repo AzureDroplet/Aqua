@@ -74,7 +74,8 @@ public class PlayerController : MonoBehaviour
         }
         uiManager.SetHP(currentHP);
         isUnBeatTime = true;
-        boxCollider2D.enabled = false;
+        // boxCollider2D.enabled = false;
+        gameObject.layer = 8;   // enemy와 충돌 방지
         StartCoroutine("UnBeatTime");
     }
 
@@ -92,7 +93,8 @@ public class PlayerController : MonoBehaviour
 
         //Alpha Effect End
         spriteRenderer.color = new Color32(255, 255, 255, 255);
-        boxCollider2D.enabled = true;
+        // boxCollider2D.enabled = true;
+        gameObject.layer = 7;
         isUnBeatTime = false;
 
         yield return null;

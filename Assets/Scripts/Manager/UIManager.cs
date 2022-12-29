@@ -15,6 +15,7 @@ public class UIManager : MonoBehaviour
     public Button button_Start;
     public Button button_Restart;
 
+    public Text textNickname;
     public GameObject[] GameUI;
 
     // Singleton 처리

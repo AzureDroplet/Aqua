@@ -264,6 +264,38 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 762128075239729141, guid: a4cdc8e17411740e3b848b3f394f8d89, type: 3}
+      propertyPath: m_OnValueChanged.m_PersistentCalls.m_Calls.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 762128075239729141, guid: a4cdc8e17411740e3b848b3f394f8d89, type: 3}
+      propertyPath: m_OnValueChanged.m_PersistentCalls.m_Calls.Array.data[0].m_Mode
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 762128075239729141, guid: a4cdc8e17411740e3b848b3f394f8d89, type: 3}
+      propertyPath: m_OnValueChanged.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 711952740}
+    - target: {fileID: 762128075239729141, guid: a4cdc8e17411740e3b848b3f394f8d89, type: 3}
+      propertyPath: m_OnValueChanged.m_PersistentCalls.m_Calls.Array.data[0].m_CallState
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 762128075239729141, guid: a4cdc8e17411740e3b848b3f394f8d89, type: 3}
+      propertyPath: m_OnValueChanged.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: set_interactable
+      objectReference: {fileID: 0}
+    - target: {fileID: 762128075239729141, guid: a4cdc8e17411740e3b848b3f394f8d89, type: 3}
+      propertyPath: m_OnValueChanged.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
+      value: UnityEngine.UI.Selectable, UnityEngine.UI
+      objectReference: {fileID: 0}
+    - target: {fileID: 762128075239729141, guid: a4cdc8e17411740e3b848b3f394f8d89, type: 3}
+      propertyPath: m_OnValueChanged.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_BoolArgument
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 762128075239729141, guid: a4cdc8e17411740e3b848b3f394f8d89, type: 3}
+      propertyPath: m_OnValueChanged.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgumentAssemblyTypeName
+      value: UnityEngine.Object, UnityEngine
+      objectReference: {fileID: 0}
     - target: {fileID: 3417113259348065810, guid: a4cdc8e17411740e3b848b3f394f8d89, type: 3}
       propertyPath: m_Pivot.x
       value: 0
@@ -351,6 +383,14 @@ PrefabInstance:
     - target: {fileID: 3417113259348065822, guid: a4cdc8e17411740e3b848b3f394f8d89, type: 3}
       propertyPath: m_Name
       value: Canvas
+      objectReference: {fileID: 0}
+    - target: {fileID: 3417113259929136639, guid: a4cdc8e17411740e3b848b3f394f8d89, type: 3}
+      propertyPath: m_AnchorMax.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3417113259929136639, guid: a4cdc8e17411740e3b848b3f394f8d89, type: 3}
+      propertyPath: m_AnchorMax.y
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 5111702846443654634, guid: a4cdc8e17411740e3b848b3f394f8d89, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target

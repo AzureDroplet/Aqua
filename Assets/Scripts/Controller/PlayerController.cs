@@ -119,7 +119,7 @@ public class PlayerController : MonoBehaviour
         while(true){
             yield return null;
             int pos = Mathf.RoundToInt(this.transform.position.y);
-            if(pos == _maxPos) continue;
+            if(pos == _maxPos || pos < 0) continue;
             _maxPos = (_maxPos < pos) ? pos : _maxPos;
             if(_maxPos % 5 == 0){
                 ScoreUp(20);

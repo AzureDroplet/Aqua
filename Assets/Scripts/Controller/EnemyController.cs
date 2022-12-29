@@ -5,11 +5,24 @@ using UnityEngine;
 public class EnemyController : MonoBehaviour
 {
     
+    // Singleton 처리
+    public static EnemyController Instance;
+    private void Awake()
+    {
+        Instance = this;
+    }
+
     public GameObject[] Enemys;
     private float PlayerPosY;
 
+    
     // Start is called before the first frame update
     void Start()
+    {
+        //StartCoroutine(CreateEnemy());
+    }
+
+    public void Start_CreateEnemy()
     {
         StartCoroutine(CreateEnemy());
     }

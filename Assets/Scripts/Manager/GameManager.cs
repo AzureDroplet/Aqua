@@ -11,6 +11,8 @@ public class GameManager : MonoBehaviour
     }
     public GameState curGameState = GameState.Ready;
     UIManager _uiManager;
+    EnemyController _enemyController;
+    ItemManager _itemManager;
     public static GameManager instance = null;
     private void Awake()
     {
@@ -29,6 +31,8 @@ public class GameManager : MonoBehaviour
 
     void Start(){
         _uiManager = UIManager.Instance; 
+        _enemyController = EnemyController.Instance;
+        _itemManager = ItemManager.Instance;
     }
 
     public void SetGameState(string gameState){
@@ -43,7 +47,8 @@ public class GameManager : MonoBehaviour
             case "Play":
                 Debug.Log("게임 시작");
                 curGameState = GameState.Play;
-                _uiManager.SetPlayUI(); break;
+                _uiManager.SetPlayUI();
+                CreateEnemyAndItem(); break;
 
             case "End":
                 Debug.Log("게임 오버");
@@ -56,6 +61,13 @@ public class GameManager : MonoBehaviour
     
     public GameState GetGameState(){
         return curGameState;
+    }
+
+    public void CreateEnemyAndItem()
+    {
+        //enemy랑 item은 싱글톤 안쓰고 하고싶다....
+        _enemyController.Start_CreateEnemy();
+        _itemManager.Start_CreateItem();
     }
 
 }

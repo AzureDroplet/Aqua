@@ -4,7 +4,12 @@ using UnityEngine;
 
 public class ItemManager : MonoBehaviour
 {
-
+    // Singleton 처리
+    public static ItemManager Instance;
+    private void Awake()
+    {
+        Instance = this;
+    }
     public GameObject[] coins;
     public GameObject[] hearts;
     public GameObject[] trashes;
@@ -12,6 +17,11 @@ public class ItemManager : MonoBehaviour
     public int buildY = -5;
 
     void Start()
+    {
+        //StartCoroutine(CreateItem());
+    }
+
+    public void Start_CreateItem()
     {
         StartCoroutine(CreateItem());
     }

@@ -70,7 +70,7 @@ public class PlayerController : MonoBehaviour
         currentHP -= damage;
         if(currentHP <= 0) {
             GameManager.instance.SetGameState("End");
-            ServerInput.instance.AddRank("aqua", score);
+            ServerInput.instance.AddRank(uiManager.textNickname.text, score);
         }
         uiManager.SetHP(currentHP);
         isUnBeatTime = true;

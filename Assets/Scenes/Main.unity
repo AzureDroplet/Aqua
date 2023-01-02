@@ -990,6 +990,10 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 711952740}
     - target: {fileID: 5892076332889429044, guid: 29df3988c51ca4abea9b93eda37108d6, type: 3}
+      propertyPath: textNickname
+      value: 
+      objectReference: {fileID: 1371912592}
+    - target: {fileID: 5892076332889429044, guid: 29df3988c51ca4abea9b93eda37108d6, type: 3}
       propertyPath: button_Restart
       value: 
       objectReference: {fileID: 711952739}
@@ -1055,6 +1059,17 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 29df3988c51ca4abea9b93eda37108d6, type: 3}
+--- !u!114 &1371912592 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 3782311336380855118, guid: a4cdc8e17411740e3b848b3f394f8d89, type: 3}
+  m_PrefabInstance: {fileID: 711952734}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5f7201a12d95ffc409449d95f23cf332, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &1671607676
 PrefabInstance:
   m_ObjectHideFlags: 0
